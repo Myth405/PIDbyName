@@ -9,7 +9,7 @@ using namespace std;
 // To ensure correct resolution of symbols, add Psapi.lib to TARGETLIBS
 // and compile with -DPSAPI_VERSION=1
 
-DWORD PrintProcessNameAndID(string nameEXE)
+DWORD getPID(string nameEXE)
 {
     DWORD aProcesses[1024], cbNeeded, cProcesses;
     unsigned int i;
@@ -63,6 +63,6 @@ DWORD PrintProcessNameAndID(string nameEXE)
 int main()
 {
     string nameEXE = "steam.exe";
-    cout << PrintProcessNameAndID(nameEXE);
+    cout << getPID(nameEXE);
     return 0;
 }
